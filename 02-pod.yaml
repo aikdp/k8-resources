@@ -1,7 +1,7 @@
 #Craeting pod in kubernetes
 
 apiVersion: v1
-kind: pod
+kind: Pod   #P uppercase
 metadata:
   name: nginx
 spec:
