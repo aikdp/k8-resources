@@ -1,0 +1,9 @@
+#K8 resources with namespaces
+apiVersion: v1
+kind: Namespace
+metadata: 
+  name: expense:
+  labels:
+    project: expense
+    environment: dev
+    
