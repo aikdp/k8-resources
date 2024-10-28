@@ -2,11 +2,11 @@
 apiVersion: v1
 kind: Pod #Namesapce Service 
 metadata:
-  name: label
-  labels:
-    environment: dev
-    project: expense
-    tier: backend
+  # name: label
+  # labels:
+  #   environment: dev
+  #   project: expense
+  #   tier: backend
   name: annotations-demo
   annotations:
     imageregistry: "https://telugudevops.online/"
