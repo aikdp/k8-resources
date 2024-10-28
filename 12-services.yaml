@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     project: expense
-    tier: backend
+    module: backend
     environment: dev
   ports:
     - name: ngin-svc-port
