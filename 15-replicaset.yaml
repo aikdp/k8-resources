@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: ginx
-          image: nginx:stable-perl
+          image: nginx
 
 ---
 apiVersion: v1
