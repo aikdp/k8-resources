@@ -9,3 +9,18 @@ spec:
   - name: almalinux
     image: almalinux:9
     command: ["sleep", "1000"]
+
+
+#     CrashLoopBackOff:
+#  	Container is not able to start.
+# 	Kubernetes can automatically restart the containers, if we get error
+
+
+# Delete and recreate
+# 	Kubectl delete -f  03-multi-containwr.yaml
+# GIT PUSH—>PULL
+# kubectl apply -f 03-multi-containwr.yaml
+# Kubectl get pods
+# Ans: 2/2 running	
+
+# SESSION 48

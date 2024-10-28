@@ -1,0 +1,29 @@
+#label:
+apiVersion: v1
+kind: Pod Namesapce Service 
+metadata:
+  name: label-annotations
+  labels:
+    environment: dev
+    project: expense
+    tier: backend
+  annotations:
+    imageregistry: "https://telugudevops.online/"
+    buildURL: "htpps://dockerhub.com/"
+spec:
+  containers:
+    - name: nodejs
+      image: nodejs:20
+      env:
+        - name: course
+          value: "Devops with Azure"
+        - name: hosted_zone
+          value: "telugudevops.online"
+        - name: mysql_password
+          value: "ExpenseApp@1"
+        
+    - name: nginx
+      image: nginx:8.0
+      ports:
+        - port_number: 80
+
