@@ -8,11 +8,11 @@ spec:
     image: nginx
     resources:
       requests:
-        cpu: 100m
-        memory: 68Mi
+        cpu: "100m"
+        memory: "68Mi"
       limits:
-        cpu: 120m
-        memory: 100Mi
+        cpu: "120m"
+        memory: "100Mi"
 
 
 # apiVersion: v1
