@@ -13,3 +13,20 @@ spec:
       limits:
         cpu: 120m
         memory: 100Mi
+
+
+# apiVersion: v1
+# kind: Pod
+# metadata: 
+#   name: limits
+# spec:
+#   containers:
+#   - name: nginx
+#     image: nginx
+#     resources:
+#       requests:
+#         cpu: 100m
+#         memeory: 68Mi
+#       limits:
+#         cpu: 120m
+#         memory: 100Mi
