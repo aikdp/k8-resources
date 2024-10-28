@@ -7,9 +7,9 @@ spec:
     - name: nginx
       image: nginx
       env:
-      - name: course
-        value: "devops"
-      - name: trainer
-        value: "Siva kumar"
-      - name: duration
-        value: "120HRS"
+        - name: course
+          value: "devops"
+        - name: trainer
+          value: "Siva kumar"
+        - name: duration
+          value: "120HRS"
