@@ -1,0 +1,48 @@
+#EBS Dynamic Volume Provisionong
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-ebs-claim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: sc-dynamic-ebs
+  resources:
+    requests:
+      storage: 4Gi
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-dynamic-ebs
+  labels:
+    purpose: project-exp
+spec:
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1f
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:       #this equals to --docker run -v <host-path>:<container-path> 
+    - name: pvc-ebs-claim
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: pvc-dynamic-ebs
+    persistentVolumeClaim:
+      claimName: pvc-ebs-claim
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  type: LoadBalancer
+  selector:
+    purpose: project-exp
+  ports:
+    - name: nginx-svc-port
+      protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30007
