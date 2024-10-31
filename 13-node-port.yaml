@@ -1,9 +1,14 @@
+#NodepOrt:  It open the node port of the workernode
+#differnce with cluster ip and NodePort is--> we can communicate pod from outside or inetrnet.
+#Cluster IP-->Communication is b/w pod to pod internally.
+
+
 apiVersion: v1
 kind: Service
 metadata:
   name: nginx-np
 spec:
-  type: NodePort
+  type: NodePort    
   selector:
     project: expense
     module: backend

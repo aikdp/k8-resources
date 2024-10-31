@@ -1,3 +1,8 @@
+#Annotation resource:: annaottaion can accepts all special chars and alphanumerics as well
+#where as in labels, it has some limits.
+#in Annotations, we can add-->specil chars, urls, aplha-numerics, etc
+
+
 kind: Pod
 apiVersion: v1
 metadata:

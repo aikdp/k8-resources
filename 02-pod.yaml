@@ -1,10 +1,11 @@
 #Craeting pod in kubernetes
+#pod is smallest deployment kubernetes. Pod has one or more containers in it.
 
-apiVersion: v1
+apiVersion: v1  
 kind: Pod   #P uppercase
-metadata:
-  name: nginx
-spec:
+metadata:     #to name the pod
+  name: nginx 
+spec:       #specification of containers
   containers:
   - name: nginx
-    image: nginx:stable-perl
+    image: nginx:stable-perl    #here u can give your customized image or any image in the docker hub

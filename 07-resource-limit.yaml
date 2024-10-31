@@ -1,3 +1,8 @@
+#Resource - Utilisation:: we can give the soft limit and hard limit.
+# Means, allocating memory to conatiners, why because if conatiners are over utilizing due to some errors in the code, we can limit by hard and soft limit.
+#soft limit:: we are asking container to use this memory only.
+#hard limit: if container reaches and over utilised the soft limit, then it can not use or cross the hard limit. if it touches hard limit. container stops working.
+
 kind: Pod
 apiVersion: v1
 metadata:
@@ -7,11 +12,11 @@ spec:
   - name: nginx
     image: nginx
     resources:
-      requests:
+      requests:        #soft limit
         cpu: "100m"
         memory: "68Mi"
-      limits:
-        cpu: "120m"
+      limits:           # hard limit
+        cpu: "120m" 
         memory: "100Mi"
 
 

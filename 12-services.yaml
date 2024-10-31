@@ -3,13 +3,13 @@ kind: Service
 metadata:
   name: nginx
 spec:
-  selector:
+  selector:   #it searches the running pods, if any pods are matches with below labels and this service will attched to that pod.
     project: expense
     module: backend
     environment: dev
   ports:
-    - name: nginx-svc-port
+    - name: nginx-svc-port  
       protocol: TCP
-      port: 80
-      targetPort: 80
+      port: 80    #it is the service will open
+      targetPort: 80    #container port will open
       

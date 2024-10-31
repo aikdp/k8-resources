@@ -1,13 +1,15 @@
+#env resource:  we can use environment vars in within the container( inside conatianers)
+
 kind: Pod
 apiVersion: v1
 metadata:
-  name: env-demo
+  name: environment
 spec:
   containers:
     - name: nginx
-      image: nginx
-      env:
-        - name: COURSE
+      image: nginx      
+      env:              #environment variables
+        - name: COURSE    
           value: "devops"
         - name: TRAINER
           value: "Siva kumar"

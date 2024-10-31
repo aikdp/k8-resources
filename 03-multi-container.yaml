@@ -4,21 +4,22 @@ metadata:
   name: multi-container
 spec:
   containers:
-  - name: nginx
+  - name: nginx     #container 1
     image: nginx
-  - name: almalinux
+  - name: almalinux   #container 2
     image: almalinux:9
-    command: ["sleep", "1000"]
+    command: ["sleep", "1000"]    #this is the command which runs within the this image, once it started.
 
 
 #     CrashLoopBackOff:
 #  	Container is not able to start.
 # 	Kubernetes can automatically restart the containers, if we get error
 
+#So you have to delete and recraete the pod.
 
 # Delete and recreate
 # 	Kubectl delete -f  03-multi-containwr.yaml
-# GIT PUSH—>PULL
+# GIT PUSH—>PULL
 # kubectl apply -f 03-multi-containwr.yaml
 # Kubectl get pods
 # Ans: 2/2 running	

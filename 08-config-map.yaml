@@ -1,3 +1,8 @@
+#ConfigMap:: which means variables, means key values pairs.
+#if you want to use the resourecs without harming or diturbing the code, that ois through varibles only right.
+#Hence, here in kubernetes we can call it as s ConfigMap. by uisng this we can rerfer our COnfigMaps to any other pods.
+
+
 apiVersion: v1
 kind: ConfigMap
 metadata:
