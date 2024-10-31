@@ -24,19 +24,19 @@ spec:
   resources:
     requests:
       storage: 5Gi    #should not ask more than PV
-# ---
-# apiVersion: v1
-# kind: Pod
-# metadata:
-#   name: ebs-static
-# spec:
-#   containers:
-#   - name: nginx
-#     image: nginx
-#     volumeMounts:       #this equals to --docker run -v <host-path>:<container-path> 
-#     - name: ebs-static
-#       mountPath: /usr/share/nginx/html
-#   volumes:
-#   - name: ebs-static
-#     persistentVolumeClaim:
-#       claimName: ebs-static
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ebs-static
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:       #this equals to --docker run -v <host-path>:<container-path> 
+    - name: ebs-static
+      mountPath: /usr/share/nginx/html
+  volumes:
+  - name: ebs-static
+    persistentVolumeClaim:
+      claimName: ebs-static
