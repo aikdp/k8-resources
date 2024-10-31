@@ -10,7 +10,7 @@ spec:
   csi:
     driver: ebs.csi.aws.com
     fsType: ext4
-    volumeHandle: vol-0019ed43b305b2795
+    volumeHandle: vol-02b5db266fa473548
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -31,7 +31,7 @@ metadata:
   name: ebs-static
 spec:
   nodeSelector:
-    topology.kubernetes.io/zone: us-east-1d
+    topology.kubernetes.io/zone: us-east-1f
   containers:
   - name: nginx
     image: nginx
@@ -42,3 +42,18 @@ spec:
   - name: ebs-static
     persistentVolumeClaim:
       claimName: ebs-static
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: nginx
+# spec:
+#   type: LoadBalancer
+#   selector:
+#     purpose: ebs-static
+#   ports:
+#     - name: nginx-svc-port
+#       protocol: TCP
+#       port: 80
+#       targetPort: 80
+#       nodePort: 30007
