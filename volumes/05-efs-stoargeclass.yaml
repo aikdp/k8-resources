@@ -1,0 +1,12 @@
+#EFS Storage class:
+
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: efs-dynamic-sc
+provisioner: efs.csi.aws.com
+parameters:
+  provisioningMode: efs-ap
+  fileSystemId: fs-00843e10479f860db
+  directoryPerms: "700"
+  basePath: "/expense"
