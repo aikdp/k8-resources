@@ -15,53 +15,53 @@ spec:
   csi:
     driver: efs.csi.aws.com
     volumeHandle:
----
-#Claim: EFS-PVC
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: efs-static-pvc
-spec:
-  accessModes:
-    - ReadWriteOnce
-  storageClassName: ""
-  resources:
-    requests:
-      storage: 5Gi
----
+# ---
+# #Claim: EFS-PVC
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: efs-static-pvc
+# spec:
+#   accessModes:
+#     - ReadWriteOnce
+#   storageClassName: ""
+#   resources:
+#     requests:
+#       storage: 5Gi
+# ---
 
-#ADD POD: EFS-POD
-apiVersion: v1
-kind: Pod
-metadata:
-  name: efs-static-pod
-  labels:
-    purpose: volume-efs
-spec:
-  containers:
-  - name: nginx
-    image: nginx
-    volumeMounts:
-    - name: efs-static-storage
-      mountPath: /usr/share/nginx/html
-  volumes:
-  - name: efs-static-storage
-    persistentVolumeClaim:
-      claimName: efs-static-pvc
+# #ADD POD: EFS-POD
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: efs-static-pod
+#   labels:
+#     purpose: volume-efs
+# spec:
+#   containers:
+#   - name: nginx
+#     image: nginx
+#     volumeMounts:
+#     - name: efs-static-storage
+#       mountPath: /usr/share/nginx/html
+#   volumes:
+#   - name: efs-static-storage
+#     persistentVolumeClaim:
+#       claimName: efs-static-pvc
 
----
-#ADd Service: EFS-SERVICE
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx
-spec:
-  type: LoadBalancer
-  selector:
-    purpose: volume-efs
-  ports:
-    - name: nginx-svc-port
-      protocol: TCP
-      port: 80
-      targetPort: 80
-      nodePort: 30007
+# ---
+# #ADd Service: EFS-SERVICE
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: nginx
+# spec:
+#   type: LoadBalancer
+#   selector:
+#     purpose: volume-efs
+#   ports:
+#     - name: nginx-svc-port
+#       protocol: TCP
+#       port: 80
+#       targetPort: 80
+#       nodePort: 30007
