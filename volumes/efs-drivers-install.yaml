@@ -1,0 +1,20 @@
+#!/bin/bash
+
+ #Manifest (public registry)
+#link:  https://github.com/kubernetes-sigs/aws-efs-csi-driver?tab=readme-ov-file
+
+
+#Insatlling EFS Drivers
+#To install the driver using images stored in the public Amazon ECR registry
+
+#Check branches new releases—2.X --->Change to new release(eg: 2.1)
+
+kubectl kustomize \
+    "github.com/kubernetes-sigs/aws-efs-csi-driver/deploy/kubernetes/overlays/stable/?ref=release-2.1" > public-ecr-driver.yaml
+
+#kubectl apply -f public-ecr-driver.yaml
+#Ans: it will show that, installation of drivers. (efs drvivers are installed)
+
+
+#If any problem to your cluster, update ur cluster command is:
+# aws eks --region us-east-1 update-kubeconfig --name expense
