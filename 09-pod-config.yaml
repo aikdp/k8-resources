@@ -15,7 +15,7 @@ spec:
               name: nginx-config
               key: course
         - name: duration
-          valueFrom:                 #2nd var:here it is reffreing with key:value pairs, means by giving key here and we will get value of key.
+          valueFrom:           #2nd var:here it is reffreing with key:value pairs, means by giving key here and we will get value of key.
             configMapKeyRef:         #this is the keyword to refer from any ConfigMap resource
               name: nginx-config
               key: duration

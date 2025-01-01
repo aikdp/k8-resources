@@ -9,3 +9,12 @@ spec:       #specification of containers
   containers:
   - name: nginx
     image: nginx:stable-perl    #here u can give your customized image or any image in the docker hub
+
+# apiVersion: v1  
+# kind: Pod   
+# metadata:     
+#   name: nginx 
+# spec:       
+#   containers:
+#   - name: nginx
+#     image: nginx:stable-perl    
